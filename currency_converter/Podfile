@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.2'
+
+target 'currency_converter' do
+  
+  # Pods for currency_converter
+  pod 'Alamofire', '~> 5.0'
+
+
+  target 'currency_converterTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'currency_converterUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
