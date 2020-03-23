@@ -18,6 +18,16 @@ class ViewController: UIViewController {
     var currency: String = "rub"
     var CurrencyPrice: Double = 0.0
     
+    struct Currency: Decodable {
+      let count: Int
+      let all: [Currency]
+      
+      enum CodingKeys: String, CodingKey {
+        case count
+        case all = "rates"
+      }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchFilms()
@@ -48,7 +58,12 @@ class ViewController: UIViewController {
     func fetchFilms() {
       let request = AF.request("https://api.exchangeratesapi.io/latest")
       request.responseJSON {(data) in
-        print(data)
+          request.responseDecodable(of: Currency.self) { (response) in
+            guard let currencys = response.value else { return }
+            print(currencys.all[0].country)
+          }
+        //print(data)
       }
     }
+    
 }
