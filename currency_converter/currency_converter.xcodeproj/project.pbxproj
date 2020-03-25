@@ -149,12 +149,12 @@
 			children = (
 				E9DC65ED2423ACED004CD44A /* AppDelegate.swift */,
 				E9DC65EF2423ACED004CD44A /* SceneDelegate.swift */,
+				E9266AE42424CD920057C4DE /* Currency.swift */,
 				E9DC65F12423ACED004CD44A /* ViewController.swift */,
 				E9DC65F32423ACED004CD44A /* Main.storyboard */,
 				E9DC65F62423ACEF004CD44A /* Assets.xcassets */,
 				E9DC65F82423ACEF004CD44A /* LaunchScreen.storyboard */,
 				E9DC65FB2423ACEF004CD44A /* Info.plist */,
-				E9266AE42424CD920057C4DE /* Currency.swift */,
 			);
 			path = currency_converter;
 			sourceTree = "<group>";

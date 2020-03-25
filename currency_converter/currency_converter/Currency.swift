@@ -9,20 +9,22 @@
 import Foundation
 
 struct Currency: Decodable {
-  let rates: [String]
-  let country: String
+    struct Result: Decodable  {
+        let rub: Double
+        
+        enum CodingKeys: String, CodingKey {
+          case rub = "RUB"
+        }
+    }
     
-  enum CodingKeys: String, CodingKey {
-    case rates
-    case country
-  }
+    let rates: Result
+    let base: String
+    let date: String
+    
+    enum CodingKeys: String, CodingKey {
+        case rates
+        case base
+        case date
+     }
 }
 
-extension Currency: Displayable {
-    var countryText: String {
-      country
-    }
-  var listItems: [String] {
-    rates
-  }
-}
